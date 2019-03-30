@@ -1,7 +1,6 @@
 // Yixiao Li
 // 11/10/2018
-// TA: Grigory Khanykov
-// Assignment 6: MadLibs.java
+// MadLibs.java
 
 // This program prompts the user to play a game called "Mad Lib."
 // It prints out a welcome message first, then prompts you whether you
@@ -110,8 +109,7 @@ public class MadLibs {
    public static void createParagraph(Scanner console, Scanner input, PrintStream output) {
       while (input.hasNextLine()) {
          String line = input.nextLine();
-         Scanner tokens = new Scanner(line);
-         
+         Scanner tokens = new Scanner(line);        
          while (tokens.hasNext()) {
             String word = tokens.next();
             
@@ -125,18 +123,15 @@ public class MadLibs {
                   System.out.print("an ");
                } else {
                   System.out.print("a ");
-               }
-            
+               }       
                word = word.substring(1, word.length() - 1);            
                word = word.replace("-", " ");          
                System.out.print(word + ": ");
             
                word = console.nextLine();            
-            }
-                           
+            }              
             output.print(word + " ");
          }
-         
          output.println();
       }
       System.out.println("Your mad-lib has been created!");
